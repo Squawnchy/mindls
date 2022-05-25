@@ -21,7 +21,7 @@ export type ShoppingListItemSpecifications = string[];
 
 export type ShoppingListItemDTO = {
   name: string;
-  specifiations: ShoppingListItemSpecifications;
+  specifications: ShoppingListItemSpecifications;
 }
 
 export type ShoppingListProvider = {

@@ -88,11 +88,8 @@ export function getBringShoppingListProvider(): ShoppingListProvider {
 
   const addItemToShoppingList = async (shoppingListId: string, item: ShoppingListItemDTO) => {
     try {
-      const result = await _bringClient?.saveItem(shoppingListId, item.name, item.specifiations.join(', '));
-      if (!result) {
-        throw new Error("result = undefined after saveItem is called");
-      }
-      return result;
+      const result = await _bringClient?.saveItem(shoppingListId, item.name, item.specifications.join(', '));
+      return result ?? '';
     } catch (saveItemError: unknown) {
       console.error(saveItemError);
       throw saveItemError;
